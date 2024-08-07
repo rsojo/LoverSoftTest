@@ -54,8 +54,12 @@
   <ItemGroup>
     <Compile Include="DTO\Base\IRepository.cs" />
     <Compile Include="DTO\ProductRepository.cs" />
+    <Compile Include="DTO\PurchaseRepository.cs" />
+    <Compile Include="DTO\UserRepository.cs" />
     <Compile Include="Helpers\BusinessResponse.cs" />
     <Compile Include="Helpers\Constants\General.cs" />
+    <Compile Include="Helpers\Encrypt.cs" />
+    <Compile Include="Helpers\Logging.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

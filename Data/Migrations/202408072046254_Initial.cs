@@ -27,6 +27,7 @@
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
+                        UserId = c.Int(nullable: false),
                         Date = c.DateTime(nullable: false),
                         Total = c.Decimal(nullable: false, precision: 18, scale: 2),
                     })
@@ -48,6 +49,16 @@
                 .Index(t => t.PurchaseId)
                 .Index(t => t.ProductId);
             
+            CreateTable(
+                "dbo.Users",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Email = c.String(),
+                        Password = c.String(),
+                    })
+                .PrimaryKey(t => t.Id);
+            
         }
         
         public override void Down()
@@ -58,6 +69,7 @@
             DropIndex("dbo.PurchaseProducts", new[] { "ProductId" });
             DropIndex("dbo.PurchaseProducts", new[] { "PurchaseId" });
             DropIndex("dbo.Products", new[] { "Purchase_Id" });
+            DropTable("dbo.Users");
             DropTable("dbo.PurchaseProducts");
             DropTable("dbo.Purchases");
             DropTable("dbo.Products");

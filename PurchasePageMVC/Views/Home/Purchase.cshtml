@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Purchase";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    decimal total = 0;
+}
+<div style="text-align: center; margin: 0 auto;">
+    <h2>Factura</h2>
+
+    <table style="text-align: center; margin: 0 auto;">
+        <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Total</th>
+        </tr>
+        @foreach (var product in Model)
+        {
+            total += product.Price * product.Quantity;
+            <tr>
+                <td>@product.Name</td>
+                <td>$@product.Price</td>
+                <td>@product.Quantity</td>
+                <td>$@(product.Price * product.Quantity)</td>
+            </tr>
+        }
+        <tr>
+            <td></td>
+            <td></td>
+
+
+            @if (total > 200)
+            {
+                total = total - 5 * total / 100;
+                <td> <strong>(-5%)</strong></td>
+                <td>
+                    <strong>$ @total</strong>
+                </td>
+            }
+            else
+            {
+                <td></td>
+                <td>
+                    <strong>$ @total</strong>
+                </td>
+            }
+
+        </tr>
+    </table>
+</div>
+
+
+@section Scripts {
+    <script src="~/Scripts/app.js"></script>
+}

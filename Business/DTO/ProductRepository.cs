@@ -4,6 +4,7 @@ using Data;
 using Data.Entities;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace Business.DTO
@@ -24,7 +25,8 @@ namespace Business.DTO
             catch (Exception ex)
             {
                 response.Error = true;
-                response.Msg = ex.Message;
+                response.Msg = "Error en guardado";
+                Logging.LogException(ex);
             }
 
             return response;
@@ -44,7 +46,8 @@ namespace Business.DTO
             catch (Exception ex)
             {
                 response.Error = true;
-                response.Msg = ex.Message;
+                response.Msg = "Error en guardado";
+                Logging.LogException(ex);
             }
 
             return response;
@@ -66,7 +69,8 @@ namespace Business.DTO
             catch (Exception ex)
             {
                 response.Error = true;
-                response.Msg = ex.Message;
+                response.Msg = "Error en guardado";
+                Logging.LogException(ex);
             }
             return response;
 
@@ -87,7 +91,8 @@ namespace Business.DTO
             catch (Exception ex)
             {
                 response.Error = true;
-                response.Msg = ex.Message;
+                response.Msg = "Error en guardado";
+                Logging.LogException(ex);
             }
             return response;
         }
@@ -112,10 +117,11 @@ namespace Business.DTO
             catch (Exception ex)
             {
                 response.Error = true;
-                response.Msg = ex.Message;
+                response.Msg = "Error en guardado";
+                Logging.LogException(ex);
             }
             return response;
-           
+
         }
     }
 }

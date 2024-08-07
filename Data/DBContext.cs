@@ -18,6 +18,7 @@ namespace Data
         {
 
         }
+        public System.Data.Entity.DbSet<User> Users { get; set; }
         public System.Data.Entity.DbSet<Product> Products { get; set; }
         public System.Data.Entity.DbSet<Purchase> Purchases { get; set; }
         public System.Data.Entity.DbSet<PurchaseProduct> PurchaseProducts { get; set; } // Add DbSet for PurchaseProduct entity
