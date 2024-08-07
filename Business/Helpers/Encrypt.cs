@@ -8,6 +8,11 @@ namespace Business.Helpers
 {
     public class Encrypt
     {
+        /// <summary>
+        /// Encrypts a string using TripleDES encryption algorithm.
+        /// </summary>
+        /// <param name="input">The string to be encrypted.</param>
+        /// <returns>The encrypted string.</returns>
         public static string EncryptString(string input)
         {
             byte[] data = UTF8Encoding.UTF8.GetBytes(input);
@@ -28,6 +33,11 @@ namespace Business.Helpers
             }
         }
 
+        /// <summary>
+        /// Decrypts a string using TripleDES decryption algorithm.
+        /// </summary>
+        /// <param name="input">The string to be decrypted.</param>
+        /// <returns>The decrypted string.</returns>
         public static string DecryptString(string input)
         {
             byte[] data = Convert.FromBase64String(input);

@@ -11,7 +11,11 @@ namespace Business.DTO
 {
     public class ProductRepository : IRepository<Product>
     {
-
+        /// <summary>
+        /// Retrieves a product by its ID.
+        /// </summary>
+        /// <param name="id">The ID of the product to retrieve.</param>
+        /// <returns>A BusinessResponse containing the retrieved product.</returns>
         public BusinessResponse<Product> Get(int id)
         {
             var response = new BusinessResponse<Product>();
@@ -32,6 +36,10 @@ namespace Business.DTO
             return response;
         }
 
+        /// <summary>
+        /// Retrieves all products.
+        /// </summary>
+        /// <returns>A BusinessResponse containing a list of all products.</returns>
         public BusinessResponse<Product> GetAll()
         {
             var response = new BusinessResponse<Product>();
@@ -54,6 +62,11 @@ namespace Business.DTO
 
         }
 
+        /// <summary>
+        /// Adds a new product.
+        /// </summary>
+        /// <param name="entity">The product to add.</param>
+        /// <returns>A BusinessResponse containing the added product.</returns>
         public BusinessResponse<Product> Set(Product entity)
         {
             var response = new BusinessResponse<Product>();
@@ -76,6 +89,11 @@ namespace Business.DTO
 
         }
 
+        /// <summary>
+        /// Deletes a product.
+        /// </summary>
+        /// <param name="entity">The product to delete.</param>
+        /// <returns>A BusinessResponse containing the deleted product.</returns>
         public BusinessResponse<Product> Delete(Product entity)
         {
             var response = new BusinessResponse<Product>();
@@ -96,6 +114,12 @@ namespace Business.DTO
             }
             return response;
         }
+
+        /// <summary>
+        /// Updates a product.
+        /// </summary>
+        /// <param name="entity">The updated product.</param>
+        /// <returns>A BusinessResponse containing the updated product.</returns>
         public BusinessResponse<Product> Update(Product entity)
         {
             var response = new BusinessResponse<Product>();

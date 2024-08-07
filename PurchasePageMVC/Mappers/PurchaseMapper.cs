@@ -7,8 +7,13 @@ namespace PurchasePageMVC.Mappers
 {
     public class PurchaseMapper
     {
-
-        public static Data.Entities.Purchase Map( List<Models.Product> products, int UserId)
+        /// <summary>
+        /// Maps a list of products and a user ID to a Purchase entity.
+        /// </summary>
+        /// <param name="products">The list of products to be mapped.</param>
+        /// <param name="UserId">The ID of the user making the purchase.</param>
+        /// <returns>The mapped Purchase entity.</returns>
+        public static Data.Entities.Purchase Map(List<Models.Product> products, int UserId)
         {
             var entity = new Data.Entities.Purchase
             {
@@ -24,7 +29,7 @@ namespace PurchasePageMVC.Mappers
                 Price = pp.Price
             }));
 
-            entity.Total = entity.Total > 200 ?  entity.Total - entity.Total * (decimal)0.05 : entity.Total;
+            entity.Total = entity.Total > 200 ? entity.Total - entity.Total * (decimal)0.05 : entity.Total;
             return entity;
         }
     }

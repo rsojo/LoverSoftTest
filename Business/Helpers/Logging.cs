@@ -5,6 +5,10 @@ namespace Business.Helpers
 {
     public class Logging
     {
+        /// <summary>
+        /// Logs the exception details to a log file.
+        /// </summary>
+        /// <param name="ex">The exception to be logged.</param>
         public static void LogException(Exception ex)
         {
             using (StreamWriter writer = new StreamWriter("log.txt", true))

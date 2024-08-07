@@ -13,7 +13,6 @@ namespace PurchasePageMVC.Controllers
 {
     public class UserController : Controller
     {
-
         UserRepository userRepository = new UserRepository();
 
         // Register action
@@ -24,7 +23,6 @@ namespace PurchasePageMVC.Controllers
             string email = Request.Form["Email"];
             string password = Request.Form["Password"];
             string confirmPassword = Request.Form["Password2"];
-
 
             if (password != confirmPassword)
             {
@@ -52,7 +50,6 @@ namespace PurchasePageMVC.Controllers
             return RedirectToAction("Login");
         }
 
-
         // Login action
         [HttpPost]
         public ActionResult Login(User User)
@@ -62,20 +59,19 @@ namespace PurchasePageMVC.Controllers
             var response = new BusinessResponse<User>();
             if (email != null && password != null && !email.IsEmpty() && !password.IsEmpty())
             {
-                 response = userRepository.Login(email, Encrypt.EncryptString(password));
-
+                response = userRepository.Login(email, Encrypt.EncryptString(password));
             }
-            if (response.Error) {
+            if (response.Error)
+            {
                 ViewBag.Error = response.Msg;
                 return View();
             }
             Session["User"] = response.UnitResp;
-            
+
             return RedirectToAction("Index", "Home");
         }
 
-
-        // Login action
+        // Register action
         public ActionResult Register()
         {
             return View();
@@ -86,14 +82,12 @@ namespace PurchasePageMVC.Controllers
         {
             return View();
         }
+
         // Logout action
         public ActionResult Logout()
         {
-
             Session["User"] = null;
-
             return RedirectToAction("Index", "Home");
-
         }
     }
 }

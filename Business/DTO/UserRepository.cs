@@ -11,6 +11,11 @@ namespace Business.DTO
 {
     public class UserRepository
     {
+        /// <summary>
+        /// Registers a new user in the database.
+        /// </summary>
+        /// <param name="entity">The user entity to register.</param>
+        /// <returns>A BusinessResponse containing the registered user.</returns>
         public BusinessResponse<User> Register(User entity)
         {
             var response = new BusinessResponse<User>();
@@ -31,6 +36,11 @@ namespace Business.DTO
             return response;
         }
 
+        /// <summary>
+        /// Checks if a user with the specified email exists in the database.
+        /// </summary>
+        /// <param name="email">The email to check.</param>
+        /// <returns>A BusinessResponse indicating whether the user exists or not.</returns>
         public BusinessResponse<bool> UserExists(string email)
         {
             var response = new BusinessResponse<bool>();
@@ -42,7 +52,6 @@ namespace Business.DTO
                     {
                         response.UnitResp = true;
                     }
-                    ;
                 }
             }
             catch (Exception ex)
@@ -54,6 +63,12 @@ namespace Business.DTO
             return response;
         }
 
+        /// <summary>
+        /// Logs in a user with the specified email and password.
+        /// </summary>
+        /// <param name="email">The email of the user to log in.</param>
+        /// <param name="password">The password of the user to log in.</param>
+        /// <returns>A BusinessResponse containing the logged in user.</returns>
         public BusinessResponse<User> Login(string email, string password)
         {
             var response = new BusinessResponse<User>();
