@@ -11,8 +11,11 @@ namespace Data.Entities
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Img { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
         public Purchase Purchase { get; set; }
+
+        public List<PurchaseProduct> PurchaseProducts { get; set; }
     }
 }

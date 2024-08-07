@@ -12,5 +12,7 @@ namespace Data.Entities
         public DateTime Date { get; set; }
         public decimal Total { get; set; }
         public List<Product> Products { get; set; }
+        public List<PurchaseProduct> PurchaseProducts { get; set; } 
+
     }
 }

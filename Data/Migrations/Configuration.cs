@@ -18,12 +18,9 @@
         {
             var products = new List<Product>
             {
-                new Product { Name = "Product 1", Description="Description for Product 1", Price = 100 },
-                new Product { Name = "Product 2", Description="Description for Product 2",Price = 190 },
-                new Product { Name = "Product 3", Description="Description for Product 3",Price = 50 },
-                new Product { Name = "Product 4", Description="Description for Product 4",Price = 100 },
-                new Product { Name = "Product 5", Description="Description for Product 5",Price = 190 },
-                new Product { Name = "Product 6", Description="Description for Product 6",Price = 50}
+                new Product { Name = "Product 1", Description="Description for Product 1", Price = 100 , Img ="Product1.jpg"},
+                new Product { Name = "Product 2", Description="Description for Product 2",Price = 190, Img ="Product2.jpg" },
+                new Product { Name = "Product 3", Description="Description for Product 3",Price = 50, Img ="Product3.jpg" }
             };
 
             context.Products.AddRange(products);
